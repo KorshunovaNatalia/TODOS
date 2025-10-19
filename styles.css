@@ -1,0 +1,337 @@
+body{
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+/*БЛОК О JavaScript*/
+.js__container{
+    background-color: #f3f3e0;
+    padding: 10px 10px 0 10px;
+    width: 272px;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(0);
+    opacity: 1;
+}
+.js__title{
+    padding-bottom: 18px;
+}
+.js__title h2{
+    font-weight: 500;
+    font-size: 24px;
+    margin-top: 10px;
+}
+.js__title-source{
+    line-height: 0%;
+}
+.js__title-source p{
+    margin-bottom: 8px;
+}
+.js__title-source a{
+    color: #c25700;
+    text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    transition: all 0.3s ease;
+}
+hr{
+    border: 0;
+    border-top: 1px dashed #50523b;
+    padding-bottom: 7px;
+}
+.js__info{
+    margin-top: 13px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+.js__info::after{
+    border: 13px solid transparent;
+    border-top-color: #e2e2d0;
+    content: "";
+    position: absolute;
+    right: 40px;
+    top: 312px;
+}
+.js__info p{
+    font-style: italic;
+    letter-spacing: -0.01px;
+    line-height: 130%;
+    padding: 10px;
+    margin: 0;
+    font-size: 15px;
+    background-color: #e2e2d0;
+    border-radius: 5px;
+}
+.js__info p:before{
+    content: "“";
+    left: 12px;
+    top: 142px;
+    font-size: 50px;
+    position: absolute;
+    color: #c9c9b8;
+}
+.js__info p:after{
+    content: "”";
+    left: 255px;
+    top: 316px;
+    font-size: 50px;
+    position: absolute;
+    color: #c9c9b8;
+}
+.js__info a{
+    padding-top: 20px;
+    color: #c25700;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+.js__info a:hover{
+    border-bottom: 1px solid #c25700;
+}
+.js__footer p{
+    font-style: italic;
+    line-height: 140%;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+.js__footer a{
+    color: #c25700;
+    text-decoration: none;
+    border-bottom: 1.5px solid transparent;
+    transition: all 0.3s ease;
+}
+
+
+/*БЛОК TODOS*/
+.todos{
+    display: flex;
+    justify-content: center;
+}
+.todos__container{
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    padding-left: 312px;
+    transition: padding-left 0.3s ease-in-out;
+}
+.todos__title{
+    width: 100%;
+    max-width: 546px;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
+}
+.todos__title h1{
+    font-size: 80px;
+    font-weight: normal;
+    text-align: center;
+    color: #50523b;
+    margin: 0;
+}
+.todos__input-container{
+    width: 100%;
+    max-width: 546px;
+    height: auto;
+}
+.todos__input{
+    width: 100%;
+    height: auto;
+    position: relative;
+    word-break: break-all;
+}
+.first{
+    z-index: 10;
+}
+.input-arrow{
+    display: none;
+    position: absolute;
+    left: 7px;
+    top: 17px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+.input-container{
+    padding: 0 20px 0 59px !important;
+    z-index: 10;
+}
+.input-container::placeholder{
+    font-style: italic;
+}
+.input-text,
+.new-todo__input{
+    width: 100%;
+    height: 65px;
+    font-size: 24px;
+    background-color: #f3f3e0;
+    border-style: none;
+    padding: 0 20px 0 7px;
+    box-shadow: 0 2px 4px 0 #00000033, 
+                0 25px 50px 0 #0000001a;
+    align-items: center;
+    display: flex;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+.input-text:hover,
+.new-todo__input:hover{
+    background-color: #e7e7d6;
+}
+.input-text:focus,
+.new-todo__input:focus{
+    outline: none;
+    background-color: #e7e7d6;
+    outline: 1px solid #9a9c80;
+}
+input[type="checkbox"]{
+    appearance: none;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #50523b;
+    background-color: rgb(255, 254, 245);
+    cursor: pointer;
+    position: relative;
+    margin-right: 20px;
+}
+input[type="checkbox"]:checked::after{
+    content: "";
+    position: absolute;
+    background-image: url(images/icons8-галочка.svg);
+    width: 23px;
+    height: 23px;
+    left: 3px;
+    top: 4px;
+    border-color: #50523b;
+    background-size: contain;
+    background-position: center center;
+}
+input[type="checkbox"]:checked + p{
+    color: #767676;
+    text-decoration: line-through;
+}
+.delete-button{
+    appearance: none;
+    border: none;
+    background: none;
+    display: none;
+    float: right;
+    margin-left: auto;
+    cursor: pointer;
+    background-image: url(/images/close.png);
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.new-todo__input:hover .delete-button{
+    display: inline;
+}
+.todos__button-container{
+    display: none;
+    width: 100%;
+    min-height: 45px;
+    font-size: 16px;
+    background-color: #f3f3e0;
+    border-style: none;
+    padding: 0 20px 0 20px;
+    box-shadow: 0 2px 4px 0 #00000033, 
+                0 25px 50px 0 #0000001a;
+    box-sizing: border-box;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.todos__button-status{
+    position: absolute;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding-left: 28%;
+}
+.todos__button-status button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    outline: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+.todos__button-status button.active{
+    outline: 2px solid #c25700;
+    background-color: #c257000c;
+}
+.todos__button-status button:active{
+    background-color: #c25700;
+    color: antiquewhite;
+}
+.todos__button-clear a{
+    display: none;
+    transition: border-bottom-color 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    cursor: pointer;
+}
+.todos__button-clear a:hover{
+    cursor: pointer;
+    border-bottom-color: #c25700;
+    color: #c25700;
+}
+
+/*ФУТЕР*/
+.todos__info{
+    margin: 60px 0 50px 0;
+    text-align: center;
+    width: 100%;
+    max-width: 546px;
+}
+.todos__info p{
+    font-size: 11px;
+}
+.todos__info a{
+    text-decoration: none;
+    font-size: 11px;
+    color: #50523b;
+    border-bottom: 1.5px solid transparent;
+    transition: all 0.3s ease;
+}
+.todos__info a:hover,
+.js__footer a:hover,
+.js__title-source a:hover{
+    color: #c25700;
+    border-bottom: 1.5px solid #c25700;
+}
+
+@media(max-width: 1024px){
+    .js__container{
+        opacity: 0;
+        display: none;
+        transform: translateX(-100%);
+    }
+    .todos__container{
+        padding-left: 0;
+        transition: padding-left 0.3s ease-in-out;
+    }
+
+}
+@media(max-width:500px){
+    .todos__button-clear a{
+        padding-top: 15px;
+    }
+    .todos__button-container{
+        height: 100%;
+        min-height: 70px;
+        align-items: start;
+    }
+    .todos__button-status{
+        width: 90%;
+        bottom: 10px;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-left: 0;
+    }
+}
