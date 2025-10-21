@@ -3,106 +3,6 @@ body{
     font-size: 14px;
 }
 
-/*БЛОК О JavaScript*/
-.js__container{
-    background-color: #f3f3e0;
-    padding: 10px 10px 0 10px;
-    width: 272px;
-    position: absolute;
-    transition: all 0.5s ease-in-out;
-    transform: translateX(0);
-    opacity: 1;
-}
-.js__title{
-    padding-bottom: 18px;
-}
-.js__title h2{
-    font-weight: 500;
-    font-size: 24px;
-    margin-top: 10px;
-}
-.js__title-source{
-    line-height: 0%;
-}
-.js__title-source p{
-    margin-bottom: 8px;
-}
-.js__title-source a{
-    color: #c25700;
-    text-decoration: none;
-    border-bottom: 1.5px solid transparent;
-    transition: all 0.3s ease;
-}
-hr{
-    border: 0;
-    border-top: 1px dashed #50523b;
-    padding-bottom: 7px;
-}
-.js__info{
-    margin-top: 13px;
-    margin-bottom: 22px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-}
-.js__info::after{
-    border: 13px solid transparent;
-    border-top-color: #e2e2d0;
-    content: "";
-    position: absolute;
-    right: 40px;
-    top: 312px;
-}
-.js__info p{
-    font-style: italic;
-    letter-spacing: -0.01px;
-    line-height: 130%;
-    padding: 10px;
-    margin: 0;
-    font-size: 15px;
-    background-color: #e2e2d0;
-    border-radius: 5px;
-}
-.js__info p:before{
-    content: "“";
-    left: 12px;
-    top: 142px;
-    font-size: 50px;
-    position: absolute;
-    color: #c9c9b8;
-}
-.js__info p:after{
-    content: "”";
-    left: 255px;
-    top: 316px;
-    font-size: 50px;
-    position: absolute;
-    color: #c9c9b8;
-}
-.js__info a{
-    padding-top: 20px;
-    color: #c25700;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-.js__info a:hover{
-    border-bottom: 1px solid #c25700;
-}
-.js__footer p{
-    font-style: italic;
-    line-height: 140%;
-    margin-bottom: 8px;
-    margin-top: 15px;
-}
-.js__footer a{
-    color: #c25700;
-    text-decoration: none;
-    border-bottom: 1.5px solid transparent;
-    transition: all 0.3s ease;
-}
-
-
 /*БЛОК TODOS*/
 .todos{
     display: flex;
@@ -112,8 +12,6 @@ hr{
     display: block;
     width: 100%;
     max-width: 560px;
-    padding-left: 312px;
-    transition: padding-left 0.3s ease-in-out;
 }
 .todos__title{
     width: 100%;
@@ -184,16 +82,24 @@ hr{
     background-color: #e7e7d6;
     outline: 1px solid #9a9c80;
 }
+input{
+    flex: 1;
+    font-size: 24px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
 input[type="checkbox"]{
     appearance: none;
     border-radius: 100%;
     width: 30px;
     height: 30px;
     border: 1px solid #50523b;
-    background-color: rgb(255, 254, 245);
+    background-color: #fffef5;
     cursor: pointer;
     position: relative;
     margin-right: 20px;
+    flex: none;
 }
 input[type="checkbox"]:checked::after{
     content: "";
@@ -201,8 +107,8 @@ input[type="checkbox"]:checked::after{
     background-image: url(images/icons8-галочка.svg);
     width: 23px;
     height: 23px;
-    left: 3px;
-    top: 4px;
+    left: 2px;
+    top: 3px;
     border-color: #50523b;
     background-size: contain;
     background-position: center center;
@@ -210,6 +116,9 @@ input[type="checkbox"]:checked::after{
 input[type="checkbox"]:checked + p{
     color: #767676;
     text-decoration: line-through;
+}
+.new-todo__input:has(input[type="checkbox"]:checked){
+    background-color: #d6d6c5;
 }
 .delete-button{
     appearance: none;
@@ -262,12 +171,17 @@ input[type="checkbox"]:checked + p{
     transition: all 0.3s ease;
 }
 .todos__button-status button.active{
-    outline: 2px solid #c25700;
-    background-color: #c257000c;
+    outline: 1px solid #50523b;
+    background-color: #50523b;
+    color:antiquewhite ;
 }
 .todos__button-status button:active{
-    background-color: #c25700;
-    color: antiquewhite;
+    background-color: #50523b;
+    color: #202020;
+}
+.todos__button-status button:not(.active):hover{
+    background-color: #50523b63;
+    color: #202020;
 }
 .todos__button-clear a{
     display: none;
@@ -278,8 +192,8 @@ input[type="checkbox"]:checked + p{
 }
 .todos__button-clear a:hover{
     cursor: pointer;
-    border-bottom-color: #c25700;
-    color: #c25700;
+    border-bottom-color: #50523b;
+    color: #50523b;
 }
 
 /*ФУТЕР*/
@@ -299,25 +213,11 @@ input[type="checkbox"]:checked + p{
     border-bottom: 1.5px solid transparent;
     transition: all 0.3s ease;
 }
-.todos__info a:hover,
-.js__footer a:hover,
-.js__title-source a:hover{
-    color: #c25700;
-    border-bottom: 1.5px solid #c25700;
+.todos__info a:hover{
+    color: #50523b;
+    border-bottom: 1.5px solid #50523b;
 }
 
-@media(max-width: 1024px){
-    .js__container{
-        opacity: 0;
-        display: none;
-        transform: translateX(-100%);
-    }
-    .todos__container{
-        padding-left: 0;
-        transition: padding-left 0.3s ease-in-out;
-    }
-
-}
 @media(max-width:500px){
     .todos__button-clear a{
         padding-top: 15px;
